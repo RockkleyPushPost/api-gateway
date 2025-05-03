@@ -1,4 +1,4 @@
-module pushpost
+module github.com/RockkleyPushPost/api-gateway
 
 go 1.23.2
 

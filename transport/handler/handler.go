@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"github.com/RockkleyPushPost/api-gateway/core"
 	"github.com/gofiber/fiber/v2"
-	"pushpost/core"
 )
 
 type GatewayHandler struct {

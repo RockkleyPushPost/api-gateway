@@ -3,10 +3,10 @@ package core
 import (
 	"context"
 	"fmt"
+	"github.com/RockkleyPushPost/api-gateway/config"
 	"github.com/gofiber/fiber/v2"
 	"log"
 	"net/http"
-	"pushpost/config"
 	"strings"
 	"sync"
 	"time"

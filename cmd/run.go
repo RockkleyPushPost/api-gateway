@@ -2,6 +2,10 @@ package main
 
 import (
 	"context"
+	"github.com/RockkleyPushPost/api-gateway/config"
+	"github.com/RockkleyPushPost/api-gateway/core"
+	"github.com/RockkleyPushPost/api-gateway/service"
+	gh "github.com/RockkleyPushPost/api-gateway/transport/handler"
 	sc "github.com/RockkleyPushPost/common/config"
 	lg "github.com/RockkleyPushPost/common/logger"
 	"github.com/RockkleyPushPost/common/setup"
@@ -11,10 +15,6 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"pushpost/config"
-	"pushpost/core"
-	"pushpost/service"
-	gh "pushpost/transport/handler"
 	"syscall"
 	"time"
 )
