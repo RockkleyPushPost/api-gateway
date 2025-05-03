@@ -8,7 +8,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o gateway ./internal/services/api_gateway/cmd
+RUN CGO_ENABLED=0 GOOS=linux go build -o gateway ./cmd
 
 FROM alpine:latest
 
@@ -31,7 +31,7 @@ ENV NOTIFICATION_SERVICE_URL=${NOTIFICATION_SERVICE_URL}
 ENV POST_SERVICE_URL=${POST_SERVICE_URL}
 
 COPY --from=builder /app/gateway .
-COPY --from=builder /app/internal/services/api_gateway/config ./config/
+COPY --from=builder /app/config ./config/
 
 EXPOSE ${PORT}
 

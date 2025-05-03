@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"log"
 	"net/http"
-	"pushpost/internal/services/api_gateway/config"
+	"pushpost/config"
 	"strings"
 	"sync"
 	"time"

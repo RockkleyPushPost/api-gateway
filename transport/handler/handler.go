@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"pushpost/internal/services/api_gateway/core"
+	"pushpost/core"
 )
 
 type GatewayHandler struct {

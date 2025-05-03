@@ -36,29 +36,31 @@ type GatewayConfig struct {
 
 func LoadServicesConfig(path string) ([]ServiceConfig, error) {
 	file, err := os.ReadFile(path)
+
 	if err != nil {
+
 		return nil, err
 	}
-	fmt.Printf("USER_SERVICE_URL environment variable: %s\n", os.Getenv("USER_SERVICE_URL"))
-	// Replace environment variables in the YAML content
+
 	replaced := os.ExpandEnv(string(file))
 
 	type Config struct {
 		Services []ServiceConfig `yaml:"services"`
 	}
-	fmt.Println("Configuration after environment variable expansion:")
-	fmt.Println(replaced)
 
 	var config Config
-	// Unmarshal the YAML with environment variables replaced
+	// unmarshal YAML config with environment variables replaced
 	err = yaml.Unmarshal([]byte(replaced), &config)
+
 	if err != nil {
+
 		return nil, fmt.Errorf("failed to decode yaml: %w", err)
 	}
 
 	if len(config.Services) == 0 {
-		return nil, fmt.Errorf("no services found in configuration")
+
+		return nil, fmt.Errorf("no services found in services.yaml")
 	}
-	fmt.Println(config.Services)
+
 	return config.Services, nil
 }

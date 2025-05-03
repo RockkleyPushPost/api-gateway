@@ -3,10 +3,10 @@ package service
 import (
 	"context"
 	"errors"
+	"github.com/RockkleyPushPost/common/config"
 	"github.com/RockkleyPushPost/common/di"
 	"github.com/gofiber/fiber/v2"
 	"log"
-	"pushpost/config"
 )
 
 const serviceName string = "ApiGatewayService"

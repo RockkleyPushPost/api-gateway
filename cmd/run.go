@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	sc "github.com/RockkleyPushPost/common/config"
 	lg "github.com/RockkleyPushPost/common/logger"
 	"github.com/RockkleyPushPost/common/setup"
 	"github.com/gofiber/fiber/v2"
@@ -11,7 +12,6 @@ import (
 	"os"
 	"os/signal"
 	"pushpost/config"
-	config2 "pushpost/config"
 	"pushpost/core"
 	"pushpost/service"
 	gh "pushpost/transport/handler"
@@ -27,14 +27,14 @@ func main() {
 
 	srvLogger := lg.InitLogger(ServiceName)
 
-	cfg, err := config.LoadYamlConfig(os.Getenv("API_GATEWAY_CONFIG_PATH"))
+	cfg, err := sc.LoadYamlConfig(os.Getenv("API_GATEWAY_CONFIG_PATH"))
 
 	if err != nil {
 
 		log.Fatalf("failed to load gateway service config: %v", err)
 	}
 
-	servicesCfg, err := config2.LoadServicesConfig(os.Getenv("API_GATEWAY_SERVICES_CONFIG_PATH"))
+	servicesCfg, err := config.LoadServicesConfig(os.Getenv("API_GATEWAY_SERVICES_CONFIG_PATH"))
 
 	if err != nil {
 
