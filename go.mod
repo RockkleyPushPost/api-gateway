@@ -3,7 +3,7 @@ module github.com/RockkleyPushPost/api-gateway
 go 1.23.2
 
 require (
-	github.com/RockkleyPushPost/common v0.0.0-20250502214203-b7277dfd9f6a
+	github.com/RockkleyPushPost/common v0.0.0-20250503114409-dda4e0de0314
 	github.com/gofiber/fiber/v2 v2.52.6
 	gopkg.in/yaml.v3 v3.0.1
 )
